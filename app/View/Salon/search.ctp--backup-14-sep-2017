@@ -1,0 +1,218 @@
+<div class="service_banner">
+    <img src="<?php echo $this->webroot; ?>images/spa/service_banner.jpg">
+
+    <div class="service_beauty">
+        <div class="container">
+            <div class="col-sm-12">
+                <!--div class="service_uk">
+                    <h3>Salons In The <?php echo ucwords($selected_location); ?></h3>
+                    <span><?php echo ucwords($selected_location); ?></span>
+                </div-->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Header Banner end --->
+<?php //echo $this->element('sql_dump'); ?>
+
+<?php //echo "<pre>"; print_r($salons); echo "</pre>"; ?>
+<div class="available_Section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="four_available">
+                    
+                    <div class="col-md-12">
+                        <form action="" method="post">
+                        <div class="avail_heading">
+                            <h4>Sort By</h4>
+                        </div>
+                        <div class="col-md-6" style="padding-left:0px;">
+                       
+                       <?php if($sortby == 'name'){ ?>
+                        <input type="radio" name="sortby" value="name" class="sortby" checked="checked">
+                         <div class="icon_name icon_fix">
+                        <i class="fa fa-sort-alpha-asc" aria-hidden="true"></i>
+                            </div>
+                        <span class="name_whte">Name</span>
+                        <?php }else{ ?>
+                        <input type="radio" name="sortby" value="name" class="sortby">
+                         <div class="icon_name icon_fix">
+                        <i class="fa fa-sort-alpha-asc" aria-hidden="true"></i>
+                            </div>
+                        <span class="name_whte">Name</span>
+                        <?php } ?>
+                        </div>
+                        <div class="col-md-6">
+                        <?php if($sortby == 'rating'){ ?>
+                        <input type="radio" name="sortby" value="rating" class="sortby" checked="checked">
+                        <div class="icon_name">
+                        <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                            </div>
+                        <span class="rate_whte">Rating</span>
+                        <?php }else{ ?>
+                        <input type="radio" name="sortby" value="rating" class="sortby">
+                        <div class="icon_name">
+                        <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                            </div>
+                        <span class="rate_whte">Rating</span>
+                        <?php } ?>
+                        </div>  
+                            
+                        
+                        <h4 class="filtr_pink">Filter By</h4>
+                        
+                        <div class="avail_heading">
+                            <h4 class="small_white">Postcode</h4>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="location" value="<?php echo $selected_location; ?>" required />
+                        </div>
+                        
+                        <div class="avail_heading">
+                            <h4 class="small_white">Services</h4>
+                        </div>
+                        <div class="form-group all-serv">
+                        	<ul class="expandible" style="list-style:none;">
+                            <?php foreach($services as $service){ ?>
+                            <li class="servi">
+                            <?php if(in_array($service['Service']['name'], $service_array)){ ?>
+                            <input type="checkbox"  name="category[]" value="<?php echo $service['Service']['name']; ?>" checked="checked"><span class="side-filter"><?php echo $service['Service']['name']; ?></span>    
+                            <?php }else{ ?>
+                            <input type="checkbox"  name="category[]" value="<?php echo $service['Service']['name']; ?>"><span class="side-filter"><?php echo $service['Service']['name']; ?></span>    
+                            <?php } ?>
+                            </li>
+                            <?php } ?>
+                            </ul>
+                        </div>
+                        <input type="hidden" name="date" value="" />
+                        <!--<div class="code_service">
+                            <h4 class="small_white locate_left">Location</h4>
+                            <div class="form-group">
+                                    <?php foreach($locations as $location){ ?>
+                                <?php if($location['User']['location'] != ''){ ?>
+                                <?php if($selected_location == $location['User']['location']){ ?>
+                                <input type="radio" name="location" value="<?php echo $location['User']['location']; ?>" checked><span class="side-filter"><?php echo $location['User']['location']; ?></span>
+                                <?php }else{ ?>
+                                <div class="chk_list">
+                                <input type="radio" name="location" value="<?php echo $location['User']['location']; ?>"><span class="side-filter"><?php echo $location['User']['location']; ?></span></div>
+                                    <?php } ?>
+                                <?php } ?>
+                                    <?php } ?>
+                            </div>
+                        </div>-->
+                        
+                        <button type="submit" class="btn btn-default fltr_colr">Filter</button>
+                        
+                        </form>
+                        
+                    </div>
+                </div>
+                
+                
+                
+                
+            </div>
+
+
+            <div class="col-sm-8">
+                <div class="service_found">
+                    <div class="heading_found">
+                        <?php if($count != 0){ ?>
+                        <h4>We have found <?php echo $count; ?> search(s) <?php echo $selected_location != '' ? 'in '. ucwords($selected_location) : ''; ?></h4>
+                        <?php }else{ ?>
+                        <h4>No result found for <?php echo ucwords($selected_location); ?></h4>
+                        <?php } ?>
+                    </div>
+                    <?php // echo "<pre>"; print_r($salons); echo "</pre>"; ?>
+                    <?php if(!empty($salons)){ ?>
+                    <?php foreach($salons as $salon){ 
+                        $id = 'user' . $salon['User']['id'];
+                       $userid =  base64_encode($id);
+                        ?>
+                    <div class="col-sm-4">
+                        <div class="cover_explore">
+                            <div class="pay_item">
+                                <img src="<?php echo $this->webroot; ?>images/spa/banner/<?php echo $salon['User']['banner_img']; ?>">
+
+                                <div class="uper_service">
+                                    <h4><?php echo $salon['User']['store_name']; ?></h4>
+                                    <span><?php echo $salon['User']['address']; ?></span>
+                                    <ul>
+                                    
+                                    	<?php for($j = 0; $j < $salon['User']['avg_rating']; $j++){ ?>
+                                    
+                                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                        
+                                        <?php } ?>
+                                        
+                                        <?php
+                                        	$unrated = 5-$salon['User']['avg_rating'];
+                                            
+                                            for($i=0; $i<$unrated; $i++){
+                                        ?>
+                                        
+                                        <li class="colr_str"><i class="fa fa-star" aria-hidden="true"></i></li>
+                                        <?php } ?>
+
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="explore_service">
+<!--                                <h4>Unisex - Pay at Venue</h4>-->
+<!--                                <button type="button" class="btn btn-default default_explore">Default</button>-->
+                                <?php echo $this->Html->link('View',array('controller'=>'salon', 'action'=>'storeinformation', $userid), array('class' => 'btn btn-default default_explore')); ?>
+                            </div>
+                        </div>
+                    </div>
+                    <?php } ?>
+                    <?php }else{ ?>
+                    
+                    <img src="<?php echo $this->webroot ?>images/spa/no_show.png" class="spa_inner"/>
+                    <?php } ?>
+                </div>
+<!--                <button type="button" class="btn btn-default load_btn">Load 2 More Venue</button>-->
+
+<!--                <div class="paagination_service">
+                    <h4>Page 1 out of 2</h4>
+                    <div class="page_nation">
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination pager_margin">
+                                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>-->
+            </div>   
+        </div>
+    </div>
+</div>
+
+<script>
+$('ul.expandible').each(function(){
+    var lis = $(this).find('li:gt(4)');
+    if(!$(this).hasClass('expanded')) {
+        lis.hide();
+    } else {
+        lis.show();
+    }
+    
+    if(lis.length>0){
+        $(this).append($('<li class="expand" style="color:#ffd505;"><span>Show More</span></li>').click(function(event){
+            var $expandible = $(this).parents('.expandible');
+            $expandible.toggleClass('expanded');
+            if ( !$expandible.hasClass('expanded')) {
+                $(this).text('Show More');
+            } else {
+                $(this).text('Show Less');
+            };
+            lis.toggle();
+            event.preventDefault();
+        }));
+    }
+});
+</script>

@@ -1,0 +1,28 @@
+[23-Jun-2017 17:54:01 Asia/Kolkata] PHP Fatal error:  Class 'CakeEmail' not found in /home/singhgurpreet/public_html/spa/app/Console/Command/SubscriptionShell.php on line 33
+[23-Jun-2017 17:55:02 Asia/Kolkata] PHP Fatal error:  Class 'CakeEmail' not found in /home/singhgurpreet/public_html/spa/app/Console/Command/SubscriptionShell.php on line 33
+[23-Jun-2017 17:56:01 Asia/Kolkata] PHP Fatal error:  Class 'CakeEmail' not found in /home/singhgurpreet/public_html/spa/app/Console/Command/SubscriptionShell.php on line 33
+[24-Jun-2017 09:23:01 Asia/Kolkata] PHP Warning:  _cake_core_ cache was unable to write 'cake_dev_eng' to File cache in /home/singhgurpreet/public_html/spa/lib/Cake/Cache/Cache.php on line 328
+[24-Jun-2017 09:23:01 Asia/Kolkata] PHP Warning:  /home/singhgurpreet/public_html/spa/app/tmp/cache/persistent/ is not writable in /home/singhgurpreet/public_html/spa/lib/Cake/Cache/Engine/FileEngine.php on line 385
+[24-Jun-2017 09:23:01 Asia/Kolkata] PHP Fatal error:  Uncaught exception 'CacheException' with message 'Cache engine "_cake_core_" is not properly configured. Ensure required extensions are installed, and credentials/permissions are correct' in /home/singhgurpreet/public_html/spa/lib/Cake/Cache/Cache.php:186
+Stack trace:
+#0 /home/singhgurpreet/public_html/spa/lib/Cake/Cache/Cache.php(151): Cache::_buildEngine('_cake_core_')
+#1 /home/singhgurpreet/public_html/spa/app/Config/core.php(547): Cache::config('_cake_core_', Array)
+#2 /home/singhgurpreet/public_html/spa/lib/Cake/Core/Configure.php(72): include('/home/singhgurp...')
+#3 /home/singhgurpreet/public_html/spa/lib/Cake/bootstrap.php(175): Configure::bootstrap(true)
+#4 /home/singhgurpreet/public_html/spa/lib/Cake/Console/ShellDispatcher.php(138): require('/home/singhgurp...')
+#5 /home/singhgurpreet/public_html/spa/lib/Cake/Console/ShellDispatcher.php(100): ShellDispatcher->_bootstrap()
+#6 /home/singhgurpreet/public_html/spa/lib/Cake/Console/ShellDispatcher.php(54): ShellDispatcher->_initEnvironment()
+#7 /home/si in /home/singhgurpreet/public_html/spa/lib/Cake/Cache/Cache.php on line 186
+[29-Jun-2017 16:51:01 Asia/Kolkata] PHP Parse error:  syntax error, unexpected ''" alt="img" width="16%" /></t' (T_CONSTANT_ENCAPSED_STRING) in /home/singhgurpreet/public_html/spa/app/Console/Command/SubscriptionShell.php on line 36
+[29-Jun-2017 16:52:01 Asia/Kolkata] PHP Parse error:  syntax error, unexpected ''" alt="img" width="16%" /></t' (T_CONSTANT_ENCAPSED_STRING) in /home/singhgurpreet/public_html/spa/app/Console/Command/SubscriptionShell.php on line 36
+[03-Jul-2017 16:43:01 Asia/Kolkata] PHP Parse error:  syntax error, unexpected 'FULL_BASE_URL' (T_STRING) in /home/singhgurpreet/public_html/spa/app/Console/Command/SubscriptionShell.php on line 40
+[03-Jul-2017 16:44:01 Asia/Kolkata] PHP Parse error:  syntax error, unexpected 'FULL_BASE_URL' (T_STRING) in /home/singhgurpreet/public_html/spa/app/Console/Command/SubscriptionShell.php on line 40
+[03-Jul-2017 16:45:01 Asia/Kolkata] PHP Parse error:  syntax error, unexpected 'FULL_BASE_URL' (T_STRING) in /home/singhgurpreet/public_html/spa/app/Console/Command/SubscriptionShell.php on line 40
+[03-Jul-2017 16:46:01 Asia/Kolkata] PHP Parse error:  syntax error, unexpected 'FULL_BASE_URL' (T_STRING) in /home/singhgurpreet/public_html/spa/app/Console/Command/SubscriptionShell.php on line 40
+[03-Jul-2017 16:47:01 Asia/Kolkata] PHP Parse error:  syntax error, unexpected 'url' (T_STRING), expecting variable (T_VARIABLE) in /home/singhgurpreet/public_html/spa/app/Console/Command/SubscriptionShell.php on line 8
+[03-Jul-2017 16:48:01 Asia/Kolkata] PHP Parse error:  syntax error, unexpected 'url' (T_STRING), expecting variable (T_VARIABLE) in /home/singhgurpreet/public_html/spa/app/Console/Command/SubscriptionShell.php on line 8
+[03-Jul-2017 16:49:01 Asia/Kolkata] PHP Parse error:  syntax error, unexpected 'url' (T_STRING), expecting variable (T_VARIABLE) in /home/singhgurpreet/public_html/spa/app/Console/Command/SubscriptionShell.php on line 8
+[03-Jul-2017 16:50:02 Asia/Kolkata] PHP Parse error:  syntax error, unexpected 'url' (T_STRING), expecting variable (T_VARIABLE) in /home/singhgurpreet/public_html/spa/app/Console/Command/SubscriptionShell.php on line 8
+[03-Jul-2017 17:33:01 Asia/Kolkata] PHP Fatal error:  Using $this when not in object context in /home/singhgurpreet/public_html/spa/app/Config/bootstrap.php on line 145
+[03-Jul-2017 17:34:01 Asia/Kolkata] PHP Fatal error:  Using $this when not in object context in /home/singhgurpreet/public_html/spa/app/Config/bootstrap.php on line 145
+[03-Jul-2017 17:36:01 Asia/Kolkata] PHP Parse error:  syntax error, unexpected 'FULL_BASE_URL' (T_STRING) in /home/singhgurpreet/public_html/spa/app/Console/Command/SubscriptionShell.php on line 40
